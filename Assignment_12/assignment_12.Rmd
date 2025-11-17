@@ -1,0 +1,37 @@
+---
+title: "My R Markdown Primer"
+author: "Juan Obando"
+date: "2025-11-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+```
+
+## R Markdown
+(Brief Introduction)
+R Markdown is a framework that allows the author to interject code chunks with narrative elements that describe what is happening, as well as show the output of the code chunks.This allows for a compiled document such as an HTML or PDF that display the workflow of the analysis.
+
+(Narrative Paragraph)
+R markdown works best for organization and displaying your analysis workflow to those who will read the document. By organizing and cleanly displaying your results, you help the reader to not get lost in lines of code and text mashed together. R markdown distinguishes the code by having designated chunks, such as the one below, separate from the actual text that describes what is happening. Once compiled, the HTML, PDF, etc. shows the results of each chunk below where it was written so you can immediately see what all the work was for. However, the only negative that I can see from this is if you have a very complicated or large dataset with hundreds or thousands of rows. If you read them into the environment and have it displayed, It will take up a lot of space that could make the reader confused at what they are looking at.
+
+LaTeX expression of slope equation 
+(y=mx+b)
+
+$y = mx + b$
+
+```{r}
+
+```
+
+Executable R chunks
+
+```{r}
+mycars<-mtcars
+mycars
+ggplot(mycars,aes(x=hp,y=mpg))+
+         geom_line()
+```
+
+I like the idea of using R markdown as its a much cleaner method to report your findings and document your results so that those who dont read code can easily read the text and get the information they need. The aspect of compiling your document in a way that allows you to write your report at the same time youre doing your work is amazing and saves you time after finishing your code. Its also nice that any outputs that you include in your code are shown in the compiled document once youve ran the code. Overall R markdown is a very nice way to streamline your analysis and efficiently display your findings.
